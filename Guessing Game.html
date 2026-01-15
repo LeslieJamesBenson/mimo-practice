@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)https://8v4lo6.mimo.run/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="./Guessing Game_files/analytics.js.download"></script><script type="text/javascript" async="" src="./Guessing Game_files/js"></script><script async="" src="./Guessing Game_files/js(1)"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-58936387-12');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<script>
+  // Save the current console log function in case we need it.
+  const _log = console.log;
+  const _debug = console.debug;
+  const _info = console.info;
+  const _warn = console.warn;
+  const _error = console.error;
+  // Override the console
+  console.log = function(...rest) {
+    window.parent.postMessage(
+      {
+        source: 'iframe-' + window.name,
+        message: rest,
+        method: 'log'
+      },
+      '*'
+    );
+    _log.apply(console, arguments);
+  };
+
+  console.debug = function(...rest) {
+    window.parent.postMessage(
+      {
+        source: 'iframe-' + window.name,
+        message: rest,
+        method: 'debug'
+      },
+      '*'
+    );
+    _debug.apply(console, arguments);
+  };
+
+  console.info = function(...rest) {
+    window.parent.postMessage(
+      {
+        source: 'iframe-' + window.name,
+        message: rest,
+        method: 'info'
+      },
+      '*'
+    );
+    _info.apply(console, arguments);
+  };
+
+  console.warn = function(...rest) {
+    window.parent.postMessage(
+      {
+        source: 'iframe-' + window.name,
+        message: rest,
+        method: 'warn'
+      },
+      '*'
+    );
+    _warn.apply(console, arguments);
+  };
+
+  console.error = function(...rest) {
+    window.parent.postMessage(
+      {
+        source: 'iframe-' + window.name,
+        message: rest,
+        method: 'error'
+      },
+      '*'
+    );
+    _error.apply(console, arguments);
+  };
+</script>
+
+    
+<script>
+    window.onerror = function(msg) {
+        window.parent.postMessage(
+            {
+                source: 'iframe-' + window.name,
+                message: [msg],
+                method: 'error'
+            },
+            '*'
+            );
+    };
+</script>
+
+    
+<script>
+    window.addEventListener('load', (event) => {
+    window.parent.postMessage({
+        source: 'iframe-navigation-' + window.name,
+        message: document.location.href,
+    }, '*');
+    })
+</script>
+
+    
+<script>
+    window.onload = function() {
+        window.parent.postMessage(
+            {
+              source: 'iframe-' + window.name,
+              windowHeight: document.getElementsByTagName('html')[0].getBoundingClientRect().height,
+            },
+            '*'
+          );
+    };
+</script>
+
+    <title>Guessing Game
+    </title>
+    <link rel="stylesheet" href="./Guessing Game_files/style.css">
+  </head>
+  <body data-new-gr-c-s-check-loaded="14.1268.0" data-gr-ext-installed="">
+    <div class="container">
+      <h1>Guessing Game</h1>
+      <p>Welcome! Let's guess a number between: <br><br>
+      <em class="range">Select range</em> <br>
+        <input type="number" id="lowNum" placeholder="L">
+        to
+        <input type="number" id="highNum" placeholder="H">
+        <button onclick="useInput()">Custom Range<br> (Default is 1-100)</button>
+      </p>
+      <input id="guess" type="number">
+      <button onclick="checkGuess()">Guess</button><br><br>
+      <button id="restart" onclick="restart()">Restart</button>
+      <p id="feedback"></p>
+    </div>
+    <script src="./Guessing Game_files/script.js.download"></script>
+  
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

@@ -1,0 +1,61 @@
+let randomNumber;
+let attempts;
+let minNum = 1;
+let maxNum = 100;
+
+function useInput(){
+    minNum = Number(document.getElementById("lowNum").value);
+    maxNum = Number(document.getElementById("highNum").value);
+    if(minNum > maxNum){
+      console.log("Swapping values for you.");
+      [minNum, maxNum] = [maxNum, minNum];
+    }
+    if(minNum < 1) minNum = 1;
+    initializeGame();
+}
+function initializeGame(){
+  randomNumber = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+  attempts = 10;
+  document.getElementById("guess").value = "";
+  document.getElementById("feedback").innerHTML = "";
+  console.log(minNum , maxNum);
+}
+
+function restart(){
+  minNum = 1;
+  maxNum = 100;
+  initializeGame();
+}
+
+initializeGame();
+
+function checkGuess(){
+  attempts -= 1;
+  const inputElement = document.getElementById("guess");
+  const feedbackElement = document.getElementById("feedback");
+  const guess = Number(inputElement.value);
+  while (attempts > 0){
+    if(guess === randomNumber){
+      console.log(feedbackElement.innerHTML = "You got it right!");
+      feedbackElement.style.color ="green";
+      attempts = 0;
+      break;
+    } else if(guess < randomNumber){
+      console.log(feedbackElement.innerHTML = "Too low! Try again. Number of attempts: " + attempts);
+      feedbackElement.style.color="white";
+      break;
+    } else{
+      console.log(feedbackElement.innerHTML = "Too high! Try again.Number of attempts: " + attempts);
+      feedbackElement.style.color="white";
+      break;
+    }
+    
+  }
+  if (attempts === 0 && guess !== randomNumber){
+    feedbackElement.style.color = "white";
+    console.log(feedbackElement.innerHTML ="You are out of attempts. The correct number was " + randomNumber);
+  }
+  console.log(guess);
+  
+  console.log(randomNumber);
+}
